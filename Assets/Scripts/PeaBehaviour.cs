@@ -10,6 +10,8 @@ public class PeaBehaviour : MonoBehaviour {
 		if (zombieHit) {
 			zombieHit.Damage(damageDealt);
 			Destroy(gameObject);
+		} else if (collision.gameObject.GetComponent<Shredder>()) {
+			Destroy(gameObject);
 		}
 		
 	}
