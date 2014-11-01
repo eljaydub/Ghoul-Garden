@@ -14,7 +14,14 @@ public class ScoreKeeper : MonoBehaviour {
 		scoreText.text = score.ToString();
 		
 	}
-	
+
+	void OnLevelWasLoaded(int levelIndex) {
+		if (Application.loadedLevelName == "Start Menu") {
+			print ("Destroying " + gameObject);		
+			Destroy(gameObject);
+		}
+	}
+
 	public void Add(int amount) {
 		score += amount;
 		scoreText.text = score.ToString();
